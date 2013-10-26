@@ -47,3 +47,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+# for code coverage
+gem "simplecov", "~> 0.7.1"
