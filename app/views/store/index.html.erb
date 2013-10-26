@@ -1,0 +1,12 @@
+<h1>Catalog <% if session[:counter] > 5 then %> (Accessed <%= session[:counter] %> <%= 'time'.pluralize(session[:counter]) %> in this session since the last 'add to cart' action) <% end %> </h1>
+
+<%= @products.each do |product| %>
+  <div id='entry'>
+    <%= link_to(image_tag(product.image_url), line_items_path(:product_id => product.id), :method => :post) %>
+    <h3> <%= product.title %> </h3>
+    <%= sanitize(product.description) %>
+    <div class='price_line'>
+      <span class="price"> <%= number_to_currency(product.price) %> </span>
+    </div>
+    <%= button_to 'Add to Cart', line_items_path(:product_id => product.id) %>
+<% end %>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming Books Online Store</title>
+  <%= stylesheet_link_tag "depot" , media: :all, "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Programatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <%= link_to "Home", root_path %> <br/>
+      <a href="http://www..../faq">Questions</a> <br/>
+      <a href="http://www..../news">News</a> <br/>
+      <a href="http://www..../contact">Contact</a> <br/>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
